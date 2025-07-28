@@ -1,4 +1,7 @@
-import data from '../template-data.json'
+'use client'
+
+import { useSearchParams } from 'next/navigation'
+import { useEffect, useState } from 'react'
 import Header from '../components/Header'
 import Hero from '../components/Hero'
 import Services from '../components/Services'
@@ -8,7 +11,50 @@ import Testimonials from '../components/Testimonials'
 import Contact from '../components/Contact'
 import Footer from '../components/Footer'
 
+// Fallback data (your original template-data.json)
+import fallbackData from '../template-data.json'
+
 export default function Home() {
+  const searchParams = useSearchParams()
+  const [data, setData] = useState<any>(fallbackData)
+  const [loading, setLoading] = useState(false)
+
+  useEffect(() => {
+    const templateUrl = searchParams.get('templateUrl')
+    
+    if (templateUrl) {
+      setLoading(true)
+      
+      fetch(templateUrl)
+        .then(res => {
+          if (!res.ok) {
+            throw new Error('Failed to fetch template')
+          }
+          return res.json()
+        })
+        .then(jsonData => {
+          setData(jsonData)
+          setLoading(false)
+        })
+        .catch(error => {
+          console.error('Error fetching template:', error)
+          setData(fallbackData) // Fallback to original data
+          setLoading(false)
+        })
+    }
+  }, [searchParams])
+
+  if (loading) {
+    return (
+      <div className="min-h-screen flex items-center justify-center">
+        <div className="text-center">
+          <div className="text-4xl mb-4">🏥</div>
+          <div className="text-xl text-gray-600">Loading template...</div>
+        </div>
+      </div>
+    )
+  }
+
   return (
     <main className="min-h-screen">
       <Header company={data.company} />
