@@ -2,7 +2,6 @@
 
 import { useSearchParams } from 'next/navigation'
 import { useEffect, useState } from 'react'
-import { createClient } from '@supabase/supabase-js'
 import Header from '../../components/Header'
 import Hero from '../../components/Hero'
 import Services from '../../components/Services'
@@ -12,11 +11,7 @@ import Testimonials from '../../components/Testimonials'
 import Contact from '../../components/Contact'
 import Footer from '../../components/Footer'
 
-// Initialize Supabase client
-const supabase = createClient(
-  process.env.NEXT_PUBLIC_SUPABASE_URL!,
-  process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
-)
+// No Supabase client needed - we fetch directly from URL
 
 export default function PreviewPage() {
   const searchParams = useSearchParams()
@@ -26,28 +21,23 @@ export default function PreviewPage() {
 
   useEffect(() => {
     const fetchTemplate = async () => {
-      const id = searchParams.get('id')
+      const templateUrl = searchParams.get('templateUrl')
       
-      if (!id) {
-        setError('No template ID provided')
+      if (!templateUrl) {
+        setError('No template URL provided')
         setLoading(false)
         return
       }
 
       try {
-        const { data, error } = await supabase
-          .from('templates')
-          .select('json_data')
-          .eq('id', id)
-          .single()
-
-        if (error) {
-          setError('Template not found')
-          setLoading(false)
-          return
+        const response = await fetch(templateUrl)
+        
+        if (!response.ok) {
+          throw new Error('Failed to fetch template')
         }
-
-        setData(data.json_data)
+        
+        const jsonData = await response.json()
+        setData(jsonData)
         setLoading(false)
       } catch (err) {
         setError('Failed to load template')
