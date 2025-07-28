@@ -1,0 +1,135 @@
+{
+  "company": {
+    "name": "HealthCare Pro",
+    "tagline": "Your Health, Our Priority",
+    "description": "Leading healthcare provider committed to delivering exceptional medical care with cutting-edge technology and compassionate service.",
+    "founded": "2010",
+    "employees": "500+",
+    "locations": "25+"
+  },
+  "services": [
+    {
+      "id": 1,
+      "name": "Primary Care",
+      "description": "Comprehensive health checkups and preventive care for individuals and families.",
+      "icon": "🏥"
+    },
+    {
+      "id": 2,
+      "name": "Specialized Treatment",
+      "description": "Expert care in cardiology, neurology, orthopedics, and more specialized fields.",
+      "icon": "⚕️"
+    },
+    {
+      "id": 3,
+      "name": "Telemedicine",
+      "description": "Virtual consultations and remote healthcare services for your convenience.",
+      "icon": "📱"
+    },
+    {
+      "id": 4,
+      "name": "Emergency Care",
+      "description": "24/7 emergency medical services with state-of-the-art facilities.",
+      "icon": "🚑"
+    },
+    {
+      "id": 5,
+      "name": "Preventive Medicine",
+      "description": "Health screenings, vaccinations, and wellness programs to keep you healthy.",
+      "icon": "🩺"
+    },
+    {
+      "id": 6,
+      "name": "Mental Health",
+      "description": "Comprehensive mental health services including therapy and counseling.",
+      "icon": "🧠"
+    }
+  ],
+  "team": [
+    {
+      "id": 1,
+      "name": "Dr. Sarah Johnson",
+      "position": "Chief Medical Officer",
+      "specialty": "Internal Medicine",
+      "experience": "15+ years",
+      "image": "👩‍⚕️"
+    },
+    {
+      "id": 2,
+      "name": "Dr. Michael Chen",
+      "position": "Head of Cardiology",
+      "specialty": "Cardiovascular Disease",
+      "experience": "12+ years",
+      "image": "👨‍⚕️"
+    },
+    {
+      "id": 3,
+      "name": "Dr. Emily Rodriguez",
+      "position": "Pediatric Specialist",
+      "specialty": "Pediatrics",
+      "experience": "10+ years",
+      "image": "👩‍⚕️"
+    },
+    {
+      "id": 4,
+      "name": "Dr. James Wilson",
+      "position": "Emergency Medicine",
+      "specialty": "Emergency Care",
+      "experience": "8+ years",
+      "image": "👨‍⚕️"
+    }
+  ],
+  "testimonials": [
+    {
+      "id": 1,
+      "name": "Maria Garcia",
+      "role": "Patient",
+      "content": "The care I received at HealthCare Pro was exceptional. The staff was professional and caring throughout my treatment.",
+      "rating": 5
+    },
+    {
+      "id": 2,
+      "name": "Robert Thompson",
+      "role": "Patient",
+      "content": "Dr. Chen's expertise in cardiology helped me recover quickly. I'm grateful for the excellent medical care.",
+      "rating": 5
+    },
+    {
+      "id": 3,
+      "name": "Lisa Park",
+      "role": "Patient",
+      "content": "The telemedicine service was incredibly convenient. I could consult with my doctor from the comfort of my home.",
+      "rating": 5
+    }
+  ],
+  "stats": [
+    {
+      "number": "50,000+",
+      "label": "Patients Served"
+    },
+    {
+      "number": "25+",
+      "label": "Locations"
+    },
+    {
+      "number": "500+",
+      "label": "Medical Staff"
+    },
+    {
+      "number": "99%",
+      "label": "Patient Satisfaction"
+    }
+  ],
+  "contact": {
+    "phone": "+1 (555) 123-4567",
+    "email": "info@healthcarepro.com",
+    "address": "123 Medical Center Drive, Healthcare City, HC 12345",
+    "hours": "Monday - Friday: 8:00 AM - 8:00 PM, Saturday: 9:00 AM - 5:00 PM"
+  },
+  "social": {
+    "facebook": "https://facebook.com/healthcarepro",
+    "twitter": "https://twitter.com/healthcarepro",
+    "linkedin": "https://linkedin.com/company/healthcarepro",
+    "instagram": "https://instagram.com/healthcarepro"
+  }
+} 
