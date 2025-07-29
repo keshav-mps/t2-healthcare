@@ -1,5 +1,5 @@
 import { redirect } from 'next/navigation'
-import { getTemplateData } from '../../utils/data'
+import { getCompanyTemplateById } from '../../lib/supabase'
 import Header from '../../components/Header'
 import Hero from '../../components/Hero'
 import Services from '../../components/Services'
@@ -23,15 +23,13 @@ export default async function PreviewPage({ params }: PreviewPageProps) {
   }
 
   try {
-    const result = await getTemplateData(clientId)
+    const data = await getCompanyTemplateById(clientId)
     
-    // If data didn't come from Supabase, redirect to home
-    if (!result.fromSupabase) {
-      console.log('Template not found in Supabase, redirecting to home')
+    // If no data was returned, redirect to home
+    if (!data) {
+      console.log('Template not found, redirecting to home')
       redirect('/')
     }
-
-    const data = result.data
 
     return (
       <main className="min-h-screen">

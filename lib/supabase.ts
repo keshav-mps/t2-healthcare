@@ -1,24 +1,34 @@
-import { createClient } from '@supabase/supabase-js'
+import { createClient } from '@supabase/supabase-js';
+import localTemplateData from '../template-data.json';
 
-let supabaseClient: any = null
+const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL!;
+const supabaseKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!;
 
-try {
-  const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL
-  const supabaseKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
+export const supabase = createClient(supabaseUrl, supabaseKey);
 
-  console.log('Environment variables check:')
-  console.log('NEXT_PUBLIC_SUPABASE_URL:', supabaseUrl ? 'Set' : 'Not set')
-  console.log('NEXT_PUBLIC_SUPABASE_ANON_KEY:', supabaseKey ? 'Set' : 'Not set')
+export async function getCompanyTemplateById(id: string) {
+  try {
+    // Get the client_data JSON directly from company_template_data table
+    const { data: templateRecord, error: templateError } = await supabase
+      .from('company_template_data')
+      .select('client_data')
+      .eq('id', id)
+      .single();
 
-  if (supabaseUrl && supabaseKey) {
-    supabaseClient = createClient(supabaseUrl, supabaseKey)
-    console.log('✅ Supabase client initialized successfully')
-  } else {
-    console.warn('❌ Supabase environment variables are not set. Using fallback to local data.')
+    if (templateError) {
+      console.error(`Company ID "${id}" not found in database.`);
+      console.error('Supabase error:', templateError);
+      return null;
+    }
+
+    if (!templateRecord || !templateRecord.client_data) {
+      console.error(`Company ID "${id}" found but no client data.`);
+      return null;
+    }
+
+    return templateRecord.client_data;
+  } catch (error) {
+    console.error(`Error fetching company template for ID "${id}":`, error);
+    return null;
   }
-} catch (error) {
-  console.error('❌ Error initializing Supabase client:', error)
-  console.warn('Using fallback to local data.')
-}
-
-export const supabase = supabaseClient 
+} 
