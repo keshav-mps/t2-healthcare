@@ -72,17 +72,7 @@ export default function Contact({ contact, social }: ContactProps) {
               </div>
             </div>
             
-            {/* Social Media */}
-            <div>
-              <h4 className="text-lg font-semibold text-gray-900 mb-4">Follow Us</h4>
-              <div className="flex space-x-4">
-                <a href={social.facebook} className="text-2xl hover:text-primary-600 transition-colors">📘</a>
-                <a href={social.twitter} className="text-2xl hover:text-primary-600 transition-colors">🐦</a>
-                <a href={social.linkedin} className="text-2xl hover:text-primary-600 transition-colors">💼</a>
-                <a href={social.instagram} className="text-2xl hover:text-primary-600 transition-colors">📷</a>
-              </div>
-            </div>
-          </div>
+           
           
           {/* Contact Form */}
           <div className="bg-white rounded-xl p-8 shadow-lg">
