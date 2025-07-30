@@ -12,7 +12,7 @@ import Contact from '../components/Contact'
 import Footer from '../components/Footer'
 
 // Fallback data (your original template-data.json)
-import fallbackData from '../template-data.json'
+import fallbackData from '../data/template-data.json'
 
 export default function Home() {
   const searchParams = useSearchParams()
