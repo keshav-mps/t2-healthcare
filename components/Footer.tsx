@@ -40,10 +40,10 @@ export default function Footer({ company, contact, social }: FooterProps) {
               Leading healthcare provider committed to delivering exceptional medical care with cutting-edge technology and compassionate service.
             </p>
             <div className="flex space-x-4">
-              <a href={social.facebook} className="text-2xl hover:text-primary-400 transition-colors">📘</a>
-              <a href={social.twitter} className="text-2xl hover:text-primary-400 transition-colors">🐦</a>
-              <a href={social.linkedin} className="text-2xl hover:text-primary-400 transition-colors">💼</a>
-              <a href={social.instagram} className="text-2xl hover:text-primary-400 transition-colors">📷</a>
+              <a href={social.facebook} className="text-white hover:text-primary-400 transition-colors underline">Facebook</a>
+              <a href={social.twitter} className="text-white hover:text-primary-400 transition-colors underline">Twitter</a>
+              <a href={social.linkedin} className="text-white hover:text-primary-400 transition-colors underline">LinkedIn</a>
+              <a href={social.instagram} className="text-white hover:text-primary-400 transition-colors underline">Instagram</a>
             </div>
           </div>
           
@@ -63,26 +63,17 @@ export default function Footer({ company, contact, social }: FooterProps) {
           <div>
             <h4 className="text-lg font-semibold mb-4">Contact Info</h4>
             <div className="space-y-3">
-              <div className="flex items-start space-x-3">
-                <div className="text-lg">📞</div>
-                <div>
-                  <div className="text-sm text-gray-300">Phone</div>
-                  <div className="text-white">{contact.phone}</div>
-                </div>
+              <div>
+                <div className="text-sm text-gray-300 mb-1">Phone</div>
+                <div className="text-white">{contact.phone}</div>
               </div>
-              <div className="flex items-start space-x-3">
-                <div className="text-lg">✉️</div>
-                <div>
-                  <div className="text-sm text-gray-300">Email</div>
-                  <div className="text-white">{contact.email}</div>
-                </div>
+              <div>
+                <div className="text-sm text-gray-300 mb-1">Email</div>
+                <div className="text-white">{contact.email}</div>
               </div>
-              <div className="flex items-start space-x-3">
-                <div className="text-lg">📍</div>
-                <div>
-                  <div className="text-sm text-gray-300">Address</div>
-                  <div className="text-white text-sm">{contact.address}</div>
-                </div>
+              <div>
+                <div className="text-sm text-gray-300 mb-1">Address</div>
+                <div className="text-white text-sm">{contact.address}</div>
               </div>
             </div>
           </div>

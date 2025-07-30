@@ -12,38 +12,32 @@
     {
       "id": 1,
       "name": "Primary Care",
-      "description": "Comprehensive health checkups and preventive care for individuals and families.",
-      "icon": "🏥"
+      "description": "Comprehensive health checkups and preventive care for individuals and families."
     },
     {
       "id": 2,
       "name": "Specialized Treatment",
-      "description": "Expert care in cardiology, neurology, orthopedics, and more specialized fields.",
-      "icon": "⚕️"
+      "description": "Expert care in cardiology, neurology, orthopedics, and more specialized fields."
     },
     {
       "id": 3,
       "name": "Telemedicine",
-      "description": "Virtual consultations and remote healthcare services for your convenience.",
-      "icon": "📱"
+      "description": "Virtual consultations and remote healthcare services for your convenience."
     },
     {
       "id": 4,
       "name": "Emergency Care",
-      "description": "24/7 emergency medical services with state-of-the-art facilities.",
-      "icon": "🚑"
+      "description": "24/7 emergency medical services with state-of-the-art facilities."
     },
     {
       "id": 5,
       "name": "Preventive Medicine",
-      "description": "Health screenings, vaccinations, and wellness programs to keep you healthy.",
-      "icon": "🩺"
+      "description": "Health screenings, vaccinations, and wellness programs to keep you healthy."
     },
     {
       "id": 6,
       "name": "Mental Health",
-      "description": "Comprehensive mental health services including therapy and counseling.",
-      "icon": "🧠"
+      "description": "Comprehensive mental health services including therapy and counseling."
     }
   ],
   "team": [
@@ -52,32 +46,28 @@
       "name": "Dr. Sarah Johnson",
       "position": "Chief Medical Officer",
       "specialty": "Internal Medicine",
-      "experience": "15+ years",
-      "image": "👩‍⚕️"
+      "experience": "15+ years"
     },
     {
       "id": 2,
       "name": "Dr. Michael Chen",
       "position": "Head of Cardiology",
       "specialty": "Cardiovascular Disease",
-      "experience": "12+ years",
-      "image": "👨‍⚕️"
+      "experience": "12+ years"
     },
     {
       "id": 3,
       "name": "Dr. Emily Rodriguez",
       "position": "Pediatric Specialist",
       "specialty": "Pediatrics",
-      "experience": "10+ years",
-      "image": "👩‍⚕️"
+      "experience": "10+ years"
     },
     {
       "id": 4,
       "name": "Dr. James Wilson",
       "position": "Emergency Medicine",
       "specialty": "Emergency Care",
-      "experience": "8+ years",
-      "image": "👨‍⚕️"
+      "experience": "8+ years"
     }
   ],
   "testimonials": [

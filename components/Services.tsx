@@ -2,7 +2,6 @@ interface Service {
   id: number
   name: string
   description: string
-  icon: string
 }
 
 interface ServicesProps {
@@ -28,7 +27,6 @@ export default function Services({ services }: ServicesProps) {
               key={service.id}
               className="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-shadow duration-300 border border-gray-100"
             >
-              <div className="text-4xl mb-4">{service.icon}</div>
               <h3 className="text-xl font-semibold text-gray-900 mb-3">
                 {service.name}
               </h3>

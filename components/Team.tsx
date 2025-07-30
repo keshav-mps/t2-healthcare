@@ -4,7 +4,6 @@ interface TeamMember {
   position: string
   specialty: string
   experience: string
-  image: string
 }
 
 interface TeamProps {
@@ -30,7 +29,6 @@ export default function Team({ team }: TeamProps) {
               key={member.id}
               className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-300 text-center"
             >
-              <div className="text-6xl mb-4">{member.image}</div>
               <h3 className="text-xl font-semibold text-gray-900 mb-2">
                 {member.name}
               </h3>
