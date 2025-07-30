@@ -3,11 +3,22 @@ import localTemplateData from '../template-data.json';
 
 const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL!;
 const supabaseKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!;
+// Check if this is a published template (read-only mode)
+const isPublish = process.env.IS_PUBLISH === 'true';
 
 export const supabase = createClient(supabaseUrl, supabaseKey);
 
 export async function getCompanyTemplateById(id: string) {
   try {
+    // If this is a published template, always use local data
+    if (isPublish) {
+      console.log('Published mode: Using local template data');
+      return localTemplateData;
+    }
+
+    // Development/dashboard mode: fetch from Supabase
+    console.log(`Fetching template for ID: ${id} from Supabase`);
+    
     // Get the client_data JSON directly from company_template_data table
     const { data: templateRecord, error: templateError } = await supabase
       .from('company_template_data')

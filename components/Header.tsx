@@ -5,6 +5,7 @@ import { useState } from 'react'
 interface Company {
   name: string
   tagline: string
+  logo?: string
 }
 
 interface HeaderProps {
@@ -14,13 +15,35 @@ interface HeaderProps {
 export default function Header({ company }: HeaderProps) {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
+  // Function to render logo based on available data
+  const renderLogo = () => {
+    if (company.logo && company.logo.trim() !== '') {
+      // Check if it's a URL (starts with http/https) or a data URL
+      if (company.logo.startsWith('http') || company.logo.startsWith('data:') || company.logo.startsWith('/')) {
+        return (
+          <img 
+            src={company.logo} 
+            alt={`${company.name} logo`}
+            className="w-8 h-8 object-contain"
+          />
+        )
+      } else {
+        // If it's not a URL, treat it as an emoji or text
+        return <div className="text-2xl">{company.logo}</div>
+      }
+    } else {
+      // Fallback to default healthcare icon
+      return <div className="text-2xl">🏥</div>
+    }
+  }
+
   return (
     <header className="bg-white shadow-sm sticky top-0 z-50">
       <div className="container-custom">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <div className="flex items-center">
-            <div className="text-2xl mr-2">🏥</div>
+            <div className="mr-2">{renderLogo()}</div>
             <div>
               <h1 className="text-xl font-bold text-primary-600">{company.name}</h1>
               <p className="text-xs text-gray-500">{company.tagline}</p>
