@@ -1,3 +1,5 @@
+import React from 'react'
+
 interface Contact {
   phone: string
   email: string
@@ -71,8 +73,7 @@ export default function Contact({ contact, social }: ContactProps) {
                 </div>
               </div>
             </div>
-            
-           
+          </div>
           
           {/* Contact Form */}
           <div className="bg-white rounded-xl p-8 shadow-lg">
